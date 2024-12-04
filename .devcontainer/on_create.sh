@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
-sudo apt update
-sudo apt install -y netcat
+
+set -e
+
+sudo apt-get update
+sudo apt-get install -y netcat software-properties-common
 sudo add-apt-repository -y ppa:deadsnakes/ppa
-sudo apt install -y python3.12
+sudo apt-get install -y python3.12
 curl -sSL https://install.python-poetry.org | python3.12 -

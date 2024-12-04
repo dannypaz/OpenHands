@@ -1,15 +1,21 @@
 {
 	"name": "OpenHands Codespaces",
-	"image": "mcr.microsoft.com/devcontainers/universal",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"context": "../"
+	},
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+  "workspaceFolder": "/workspace",
 	"customizations":{
         "vscode":{
             "extensions": [
-                "ms-python.python"
+                "ms-python.python",
+								"dbaeumer.vscode-eslint",
+								"esbenp.prettier-vscode",
+								"charliermarsh.ruff@2024.20.0"
             ]
         }
     },
-	"onCreateCommand": "sh ./.devcontainer/on_create.sh",
 	"postCreateCommand": "make build",
 	"postStartCommand": "USE_HOST_NETWORK=True nohup bash -c 'make run &'"
-
 }

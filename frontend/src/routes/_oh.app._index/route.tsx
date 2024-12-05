@@ -91,7 +91,7 @@ function CodeEditor() {
       <FileExplorer isOpen={fileExplorerIsOpen} onToggle={toggleFileExplorer} />
       <div className="w-full">
         {selectedPath && !isAssetFileType && (
-          <div className="flex w-full items-center justify-between self-end p-2 overflow-hidden">
+          <div className="flex w-full items-center justify-between self-end p-2">
             <span className="text-sm text-neutral-500">{selectedPath}</span>
             <EditorActions
               onSave={handleSave}
